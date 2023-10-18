@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --dark-purple: #a113ff;
+    --light-purple: #e678ff;
+    --dark-orange: #fc8413;
+    --light-orange: #ffbf7b;
+    --dark-pink: #fe1799;
+    --light-pink: #fd9baa;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    gap: 4rem;
+    padding-block: 3rem;
+}
+
+/* PRICE CARD DESIGN */
+.price_card {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    padding: 1rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 5px 10px var(--light-orange);
+    transition: height 0.3s ease;
+    margin-block: 3rem;
+}
+
+.price_card:hover {
+    height: 550px;
+}
+
+/* PRICE CARD HEADER */
+.price_card .header {
+    position: absolute;
+    top: 0;
+    width: 110%;
+    height: 230px;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.price_card .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 230px;
+    border-radius: 20px;
+    background: linear-gradient(to right, var(--dark-orange), var(--light-orange));
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0% 90%);
+}
+
+.price_card .header .info {
+    position: relative;
+    text-align: center;
+}
+
+.price_card .header .info h1 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: 2px;
+}
+
+.price_card .header .info p {
+    font-size: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.price_card .header .price {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: #fff;
+    color: var(--dark-orange);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* PRICE CARD DESC  */
+.price_card .desc {
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price_card .desc li {
+    list-style: none;
+    color: #b1b1b1;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.price_card .desc .icon {
+    margin-right: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.price_card .desc .icon.check {
+    color: #2bcb2b;
+}
+
+.price_card button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    padding: 1rem 2rem;
+    white-space: nowrap;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, var(--dark-orange), var(--light-orange));
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.price_card button:active {
+    scale: 0.95;
+}
+
+/* COLORS DESIGN */
+/* CARD 2 */
+.price_card.card2 {
+    box-shadow: 0 5px 10px var(--light-purple);
+}
+
+.price_card.card2 .header::before,
+.price_card.card2 button {
+    background: linear-gradient(to right, var(--dark-purple), var(--light-purple));
+}
+
+.price_card.card2 .price {
+    color: var(--dark-purple);
+}
+
+.price_card.card2 {
+    box-shadow: 0 5px 10px var(--light-purple);
+}
+
+/* CARD 3 */
+.price_card.card3 {
+    box-shadow: 0 5px 10px var(--light-pink);
+}
+
+.price_card.card3 .header::before,
+.price_card.card3 button {
+    background: linear-gradient(to right, var(--dark-pink), var(--light-pink));
+}
+
+.price_card.card3 .price {
+    color: var(--dark-pink);
+}
